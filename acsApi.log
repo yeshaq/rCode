@@ -1,0 +1,19 @@
+Brief instructions on how obtain the median income per zipcode in R using the r.acs package [1]. Full instructions can be found here [2].
+
+In R:
+
+a) install.packages("acs")
+b) library(acs)
+c) api.key.install(key="<your key obtained from [3]")
+d) 
+kTown = acs.fetch(geography=geo.make(zip.code="90019"), table.number="B19013")
+kTown
+estimate(kTown)
+estimate(kTown)[1]
+
+
+[1] http://cran.r-project.org/web/packages/acs/acs.pdf
+
+[2] http://eglenn.scripts.mit.edu/citystate/wp-content/uploads/2013/06/wpid-working_with_acs_R3.pdf
+
+[3] http://api.census.gov/data/key_signup.html
